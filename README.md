@@ -66,6 +66,10 @@ Com isso, se tudo for realizado corretamente, será gerado um link, que ao ser a
 
 Para um melhor uso da API, deve-se focar no cadastro primeiro do tutor do pet, na URL: /cadastro/tutor/, para depois fazer o do próprio pet na URL: /cadastro/cadastro/, visto que a vinculação do tutor será feita automaticamente. Sugere-se que o usuário tenha uma câmera/webcam para fotografar o pet para identificação posterior, mas o código aceita o cadastro sem foto caso não seja viável.
 
+Para realizar a leitura, update ou deletar um dos dados, basta, na URL do caso, por exemplo URL/tutor/x sendo x o número do id desejado para alteração ou destruição (por questões de dependência, sugere-se que delete os cadastros dos animais antes dos tutores em caso de necessidade de deletar o tutor).
+Para a edição, basta reescrever no próprio formulário e para deletar, basta apertar o botão de "Delete" no canto superior direito.
+
+
 - Uso no Banco de Dados:
 
 Para a manipulação no banco de dados, sugere-se o uso da ferramenta pg Admin 4, nela o DBA conseguirá realizar todas as manipulações necessárias dos dados conforme o necessário ao acessar o database 'clinicavet' e manipulação das tabelas 'recepvet_cadastro' e 'recepvet_tutor'.
