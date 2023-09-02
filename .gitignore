@@ -1,0 +1,2 @@
+# Impedir a subida da pasta venv de subir no git repository
+/venv
