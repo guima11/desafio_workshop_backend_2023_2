@@ -7,6 +7,27 @@ from django.db import models
 def upload_imagem_animal(instance, filename):
     return f"{instance.animal_nome}-{filename}"
 
+# cadastro de Veterinário da clínica
+class Vet(models.Model):
+    nome = models.CharField(max_length=200, help_text= "Nome do Veterinário")
+    choices_gen = [
+         ('cao', 'Cão'),
+         ('gato', 'Gato'),
+         ('ave',  'Ave'),
+         ('peixe', 'Peixe'),
+         ('exotico', 'Exótico'),
+    ]
+
+    expert = models.CharField(choices = choices_gen, max_length=7, verbose_name='Expecialidade')
+
+    def __str__(self):
+        return f'Nome: {self.nome}. Expecialidade: {self.expert}.'
+
+    
+
+
+
+# Classe de cadastro de Tutor para clínica
 class Tutor(models.Model):
     nome = models.CharField(max_length=200, help_text= "Nome do Tutor")
     cpf = models.CharField(help_text = "Digite apenas os dígitos do CPF", verbose_name = "CPF", max_length=11)
@@ -15,7 +36,7 @@ class Tutor(models.Model):
     def __str__(self):
         return f'Nome: {self.nome}. CPF: {self.cpf}.'
 
-
+# Classe de Cadastro de pet para clínica
 class Cadastro(models.Model):
     animal_nome = models.CharField(max_length = 40, verbose_name='Nome do Animal')
 
@@ -54,5 +75,10 @@ class Cadastro(models.Model):
     tutor = models.ForeignKey(
         Tutor,
         max_length=200,
-        on_delete=models.CASCADE
-    )
+        on_delete=models.CASCADE)
+    vet = models.ForeignKey(
+        Vet,
+        max_length=200,
+        on_delete=models.CASCADE)
+
+    
