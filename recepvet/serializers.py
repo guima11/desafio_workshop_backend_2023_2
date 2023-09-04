@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tutor, Cadastro
+from .models import Tutor, Cadastro, Vet
 
 # Neste arquivo haverá a conversão dos modelos e sua serialização para JSON
 
@@ -13,4 +13,9 @@ class TutorSerializer(serializers.ModelSerializer):
 class CadastroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cadastro
+        fields = '__all__'
+
+class VetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vet
         fields = '__all__'
