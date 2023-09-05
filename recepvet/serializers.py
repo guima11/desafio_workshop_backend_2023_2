@@ -15,6 +15,7 @@ class CadastroSerializer(serializers.ModelSerializer):
         model = Cadastro
         fields = '__all__'
 
+# Serialização  dos dados do Veterinário    
 class VetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vet

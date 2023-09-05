@@ -17,6 +17,7 @@ class CadastroViewset(viewsets.ModelViewSet):
     queryset = Cadastro.objects.all()
     serializer_class = CadastroSerializer
     
+# Classe de visualização para o Cadastro do Veterinário
 class VetViewset(viewsets.ModelViewSet):
     queryset = Vet.objects.all()
     serializer_class = VetSerializer
