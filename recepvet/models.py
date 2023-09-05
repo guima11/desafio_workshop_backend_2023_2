@@ -24,9 +24,6 @@ class Vet(models.Model):
         return f'Nome: {self.nome}. Expecialidade: {self.expert}.'
 
     
-
-
-
 # Classe de cadastro de Tutor para clínica
 class Tutor(models.Model):
     nome = models.CharField(max_length=200, help_text= "Nome do Tutor")
@@ -59,7 +56,7 @@ class Cadastro(models.Model):
 
     especie = models.CharField(max_length=100, help_text= 'Caso seja cão ou gato, ponha a raça, se não, a espécie.', verbose_name= 'Raça/Espécie')
 
-    peso = models.FloatField(help_text = 'Peso do animal em kg')
+    peso = models.FloatField(help_text = 'Peso do animal em kg', verbose_name='Peso')
 
     foto = models.ImageField(upload_to=upload_imagem_animal, blank = True, null = True) # Importação de imagem do animal para animal (blank=True faz com que seja aceito sem a foto)
 
@@ -76,6 +73,7 @@ class Cadastro(models.Model):
         Tutor,
         max_length=200,
         on_delete=models.CASCADE)
+    
     vet = models.ForeignKey(
         Vet,
         max_length=200,
